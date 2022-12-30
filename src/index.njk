@@ -1,0 +1,18 @@
+---
+title: Blog Page | Home
+layout: 'base.njk'
+---
+
+<section class="blog-section">
+  <div class="wrapper">
+    <ul class="blog-items">
+      {% for post in collections.post %}
+        <li>
+          <h2 class="blog-title">{{ post.data.title }}</h2>
+          <a href={{ post.url }} >{{ post.data.anchor }}</a>
+          <img src={{post.data.image}} alt="Blog Image">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
