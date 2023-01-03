@@ -5,12 +5,20 @@ layout: 'base.njk'
 
 <section class="blog-section">
   <div class="wrapper">
+    <h2 class="section-heading">Blogs</h2>
     <ul class="blog-items">
       {% for post in collections.post %}
-        <li>
-          <h2 class="blog-title">{{ post.data.title }}</h2>
-          <a href={{ post.url }} >{{ post.data.anchor }}</a>
-          <img src={{post.data.image}} alt="Blog Image">
+        <li class="blog-list">
+          <figure>
+            <img src={{post.data.image}} alt="Blog Image">
+          </figure>
+          <div class="blog-content">
+            <h2 class="blog-title">{{ post.data.title }}</h2>
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestias quam tempore autem cupiditate sed possimus veritatis reprehenderit saepe consectetur atque tenetur, deserunt blanditiis iure esse? Accusamus magni ipsum veritatis!</p>
+            <div class="blog-btn">
+              <a href={{ post.url }} >{{ post.data.anchor }}</a>
+            </div>
+          </div>
         </li>
       {% endfor %}
     </ul>
